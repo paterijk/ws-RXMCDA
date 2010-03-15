@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<xmcda:XMCDA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.0.0.xsd">
+  <alternatives>
+    <alternative id="x1"/>
+    <alternative id="x4"/>
+    <alternative id="x3"/>
+  </alternatives>
+  <criteria>
+    <criterion id="g1"/>
+    <criterion id="g2"/>
+  </criteria>
+  <alternatives>
+    <alternative id="yo"/>
+    <alternative id="man"/>
+    <alternative id="ceci"/>
+  </alternatives>
+  <criteria>
+    <criterion id="est"/>
+    <criterion id="marrant"/>
+  </criteria>
+  <criterionValue mcdaConcept="capacityEntropy">
+    <criteriaSet>
+      <element>
+        <criterionID>g3</criterionID>
+      </element>
+      <element>
+        <criterionID>g2</criterionID>
+      </element>
+      <element>
+        <criterionID>g1</criterionID>
+      </element>
+    </criteriaSet>
+    <value>
+      <real>0.843135520967672</real>
+    </value>
+  </criterionValue>
+  <criteriaValues mcdaConcept="favorValues">
+    <criterionValue>
+      <criterionID>g3</criterionID>
+      <value>
+        <real>0.573467083066113</real>
+      </value>
+    </criterionValue>
+    <criterionValue>
+      <criterionID>g2</criterionID>
+      <value>
+        <real>0.305886289490561</real>
+      </value>
+    </criterionValue>
+    <criterionValue>
+      <criterionID>g1</criterionID>
+      <value>
+        <real>0.531048713158408</real>
+      </value>
+    </criterionValue>
+  </criteriaValues>
+  <alternativeValue mcdaConcept="kendallCorrelation">
+    <alternativesSet>
+      <element>
+        <alternativeID>x1</alternativeID>
+      </element>
+      <element>
+        <alternativeID>x2</alternativeID>
+      </element>
+      <element>
+        <alternativeID>x3</alternativeID>
+      </element>
+    </alternativesSet>
+    <value>
+      <real>-1</real>
+    </value>
+  </alternativeValue>
+  <alternativesValues mcdaConcept="overallValues">
+    <alternativeValue>
+      <alternativeID>x1</alternativeID>
+      <value>
+        <real>0</real>
+      </value>
+    </alternativeValue>
+    <alternativeValue>
+      <alternativeID>x3</alternativeID>
+      <value>
+        <real>2</real>
+      </value>
+    </alternativeValue>
+    <alternativeValue>
+      <alternativeID>x2</alternativeID>
+      <value>
+        <real>1</real>
+      </value>
+    </alternativeValue>
+  </alternativesValues>
+</xmcda:XMCDA>

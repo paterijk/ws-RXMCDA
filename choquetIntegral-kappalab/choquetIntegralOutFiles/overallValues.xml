@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xmcda:XMCDA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.0.0.xsd">
+  <alternativesValues mcdaConcept="overallValues">
+    <alternativeValue>
+      <alternativeID>x2</alternativeID>
+      <value>
+        <real>0.556042755715066</real>
+      </value>
+    </alternativeValue>
+    <alternativeValue>
+      <alternativeID>x1</alternativeID>
+      <value>
+        <real>0.203521884996489</real>
+      </value>
+    </alternativeValue>
+  </alternativesValues>
+</xmcda:XMCDA>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<program_description xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sma.uni.lu/d2cms/ws/_downloads/description.xsd">
+    <program provider="kappalab"
+        name="miniVarCapaIdent"
+        displayName="miniVarCapaIdent"
+        version="1.0" />
+    <documentation>         
+        <description>Identifies a Mobius capacity by means of an approach using a maximum like quadratic entropy principle, which is equivalent to the minimization of the variance. More precisely, this function determines, if it exists, the minimum variance capacity compatible with a set of linear constraints. The problem is solved using strictly convex quadratic programming.
+        </description>
+        <contact>Patrick Meyer (patrick.meyer@telecom-bretagne.eu)</contact>
+        <reference>I. Kojadinovic (2005), Minimum variance capacity identification, European Journal of Operational Research, in press. </reference>
+    </documentation>
+    
+    <parameters>
+        
+        <input id="kAdditivity"
+            name="kAdditivity"
+            displayName="kAdditivity"
+            isoptional="0">
+            <documentation>
+                <description>Indicates the level of k-additivity of the Mobius capacity (the Mobius transform of subsets whose cardinal is superior to k vanishes).</description>
+            </documentation>
+            <xmcda tag="methodParameters">
+                <![CDATA[
+                    <methodParameters>
+                        <parameter
+                             name="kAdditivity"> <!-- REQUIRED  -->
+                            <value>
+                                <integer>%1</integer>
+                            </value>
+                        </parameter>
+                    </methodParameters>
+                    ]]>
+            </xmcda>
+            
+            <gui status="preferFile">
+                <entry id="%1" type="int" displayName="kAdditivity">
+                    <documentation>
+                        <description>Indicates the level of k-additivity of the Mobius capacity (the Mobius transform of subsets whose cardinal is superior to k vanishes).</description>
+                    </documentation>
+                    <constraint>
+                        <description>The value should be a positive integer, less than or equal to the number of criteria.</description>
+                        <code>
+                            <![CDATA[
+                               %1 > 0
+                            ]]>
+                        </code>
+                    </constraint>
+                    <defaultValue>1</defaultValue>
+                </entry>
+            </gui>
+        </input>
+        
+        <input id="criteria" name="criteria" displayName="criteria"
+            isoptional="0">
+            
+            <documentation>
+                <description>A list of criteria. Criteria can be activated or desactivated via the &lt;active&gt; tag (true or false). By default (no &lt;active&gt; tag), criteria are considered as active.</description>
+            </documentation>
+            <xmcda tag="criteria">
+                <![CDATA[
+                    <criteria>
+                        <criterion>
+                            <active>[...]</active>
+                            [...]
+                        </criterion>
+                        [...]
+                    </criteria>
+                    ]]>
+            </xmcda>
+        </input>
+        
+        
+        <input id="alternatives" name="alternatives" displayName="alternatives"
+            isoptional="0">
+            
+            <documentation>
+                <description>A list of alternatives. Alternatives can be activated or desactivated via the &lt;active&gt; tag (true or false). By default (no &lt;active&gt; tag), alternatives are considered as active. </description>
+            </documentation>
+            <xmcda tag="alternatives">
+                <![CDATA[
+                    <alternatives>
+                        <alternative>
+                            <active>[...]</active>
+                            [...]
+                        </alternative>
+                        [...]
+                    </alternatives>
+                    ]]>
+            </xmcda>
+        </input>
+        
+        <input id="performanceTable"
+            name="performanceTable"
+            displayName="performanceTable"
+            isoptional="0">
+            
+            <documentation>
+                <description>A performance table. The evaluations should be numeric values, i.e. &lt;real&gt;, &lt;integer&gt; or &lt;rational&gt;.</description>
+            </documentation>
+            <xmcda tag="performanceTable"/>
+        </input>
+        
+        <input id="shapleyPreorder"
+            name="shapleyPreorder"
+            displayName="shapleyPreorder"
+            isoptional="1">
+            
+            <documentation>
+                <description>A valued relation on criteria expressing importance constraints on the critera. A numeric &lt;value&gt; indicates a minimal preference threshold for each &lt;pair&gt;. One &lt;pair&gt; represents an affirmation of the type "the Shapley importance index of criterion g1 is greater than the Shapley importance index of criterion g2 with preference threshold delta".</description>
+            </documentation>
+            <xmcda tag="criteriaComparisons"/>
+        </input>
+        
+        <input id="shapleyInterval"
+            name="shapleyInterval"
+            displayName="shapleyInterval"
+            isoptional="1">
+            
+            <documentation>
+                <description>A list of &lt;criterionValue&gt; containing the constraints relative to the quantitative importance of the criteria. Each &lt;criterionValue&gt; contains an an &lt;interval&gt;. Each &lt;criteriaValue&gt; represents an affirmation of the type "the Shapley importance index of criterion g1 lies in the interval [a,b]".</description>
+            </documentation>
+            <xmcda tag="criteriaValues"/>
+        </input>
+        
+        <input id="interactionPreorder"
+            name="interactionPreorder"
+            displayName="interactionPreorder"
+            isoptional="1">
+            
+            <documentation>
+                <description>A valued relation on pairs of criteria expressing constraints on value of the the Shapley interaction index. A numeric &lt;value&gt; indicates a minimal preference threshold for each &lt;pair&gt; of the relation. One &lt;pair&gt; represents a constraint of the type "the Shapley interaction index of the pair (g1,g2) of criteria is greater than the Shapley interaction index of the pair (g3,g4) of criteria with preference threshold delta".</description>
+            </documentation>
+            <xmcda tag="criteriaComparisons"/>
+        </input>
+        
+        <input id="interactionInterval"
+            name="interactionInterval"
+            displayName="interactionInterval"
+            isoptional="1">
+            
+            <documentation>
+                <description>A list of &lt;criterionValue&gt; containing the constraints relative to the type and the magnitude of the Shapley interaction index for pairs of criteria. Each &lt;criterionValue&gt; contains an an &lt;interval&gt;. Each &lt;criteriaValue&gt; represents an affirmation of the type "the Shapley interaction index of the pair (g1,g2) of criteria lies in the interval [a,b]".</description>
+            </documentation>
+            <xmcda tag="criteriaValues"/>
+        </input>
+        
+        <input id="alternativesPreorder"
+            name="alternativesPreorder"
+            displayName="alternativesPreorder"
+            isoptional="0">
+            
+            <documentation>
+                <description>A valued relation relative to the preorder of the alternatives. A numeric &lt;value&gt; indicates a minimal preference threshold for each &lt;pair&gt; of the relation. One &lt;pair&gt; represents a constraint of the type "alternative a is preferred to alternative b with preference threshold delta".</description>
+            </documentation>
+            <xmcda tag="alternativesComparisons"/>
+        </input>
+        
+        <output id="messages"
+            name="messages"
+            displayName="messages">
+            
+            <documentation>
+                <description>A list of messages generated by the algorithm.</description>
+            </documentation>
+            <xmcda tag="methodMessages"/>
+        </output>
+        
+        <output id="mobiusCapacity"
+            name="mobiusCapacity"
+            displayName="mobiusCapacity">
+            <documentation>
+                <description>The Mobius transform of a capacity.</description>
+            </documentation>
+            <xmcda tag="criteriaValues">
+                <![CDATA[
+                    <criteriaValues mcdaConcept="mobiusCapacity">
+                        <criterionValue>
+                            <criteriaSet>
+                                <element>
+                                    <criterionID>[...]</criterionID>
+                                </element>
+                                [...]
+                            </criteriaSet>
+                            <value>
+                                <real>[...]</real>
+                            </value>
+                        </criterionValue>
+                        [...]
+                    </criteriaValues>
+                    ]]>
+            </xmcda>
+        </output>
+
+    </parameters>
+</program_description>
+

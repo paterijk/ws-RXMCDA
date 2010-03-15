@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xmcdaKappalab.xsl"?>
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 file:/home/pat/Documents/currentResearch/DecisionDeck/svn-DecisionDeck/XMCDA/XMCDA-2.0.0.xsd">
+  
+  <criteriaComparisons mcdaConcept="interactionsPreorderConstraints">
+    <comparisonType>geq</comparisonType>
+    <pairs>
+      <pair>
+        <initial>
+          <criteriaSet>
+            <element><criterionID>Con</criterionID></element>
+            <element><criterionID>Env</criterionID></element>
+          </criteriaSet>
+        </initial>
+        <terminal>
+          <criteriaSet>
+            <element><criterionID>Con</criterionID></element>
+            <element><criterionID>Lon</criterionID></element>
+          </criteriaSet>
+        </terminal>
+        <value>
+          <real>0.01</real>
+        </value>
+      </pair>
+    </pairs>
+  </criteriaComparisons>
+  
+</xmcda:XMCDA>
