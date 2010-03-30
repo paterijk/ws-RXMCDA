@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <program_description xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://sma.uni.lu/d2cms/ws/_downloads/description.xsd">
-    <program provider="RXMCDA"
+    <program provider="kappalab"
         name="capacityOrness"
         displayName="capacityOrness"
         version="1.0" />
