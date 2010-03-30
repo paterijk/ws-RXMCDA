@@ -6,6 +6,7 @@
 rm(list=ls())
 
 library(RXMCDA)
+library(kappalab) 
 
 errFile<-NULL
 errData<-NULL

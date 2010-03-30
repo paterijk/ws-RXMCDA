@@ -5,6 +5,7 @@
 
 
 rm(list=ls())
+library(kappalab)
 
 library(RXMCDA)
 
