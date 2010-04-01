@@ -262,7 +262,7 @@ if (is.null(errFile)){
 					
 # we need to transform the ranks matrix in order to have the lowest value for the best alternative!
 					ordre <- -ranks[,2] + max(ranks[,2]) + 1
-
+					
 					M<-perfTable
 					
 					if (Nb_mor == na) Nb_mor <- Nb_mor-1
@@ -416,6 +416,26 @@ if (is.null(errFile)){
 					
 #Routines de programmation linéaire pour les fonctions de valeur additive
 					sol_lp<-lp("max",obj1,mat_cont2,dir1,rhs1)
+					print(M)
+					print(MM)
+					print(sol_lp$solution)
+					
+					# if there is a solution, we build the data structure containing the points of the value functions
+					
+					if(sol_lp$status == 0){
+						
+						points<-list()
+						for (i in 1:nc){
+							tmp<-c()
+							for (j in 1:dim(MM)[1]){
+								tmp<-rbind(tmp,c(MM[j,i],sol_lp$solution[j*i]))
+							}
+							
+							points<-c(points,list(tmp))
+							names(points)[i]<-critIDs[i]
+						}
+					}
+					
 					
 				}
 		)
@@ -452,7 +472,7 @@ if (execFlag){
 				namespace = c("xsi" = "http://www.w3.org/2001/XMLSchema-instance", "xmcda" = "http://www.decision-deck.org/2009/XMCDA-2.0.0"), 
 				parent=outTree)
 		
-		status<-putLogMessage(outTree, sol_lp$solution, name="solution")
+		status<-putPointsCriterionFunction(outTree, points, mcdaConcept="valueFunctions")
 		
 		status<-saveXML(outTree, file="solution.xml")
 		

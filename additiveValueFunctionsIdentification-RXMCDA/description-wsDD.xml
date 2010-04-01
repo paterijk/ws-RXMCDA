@@ -161,13 +161,29 @@
             <xmcda tag="methodMessages"/>
         </output>
         
-        <output id="solution"
-            name="solution"
-            displayName="solution">
+        <output id="valueFunctions" name="valueFunctions" displayName="valueFunctions">
             <documentation>
-                <description>The solution.</description>
+                <description>
+                    The value functions of the selected criteria.
+                </description>
             </documentation>
-            <xmcda tag="methodMessages"/>
+            <xmcda tag="criteria">
+                <![CDATA[
+					<criteria mcdaConcept="valueFunctions">
+						<criterion>
+							<criterionID>[..]</criterionID>
+							<criterionFunction>
+								<points>
+									<point>
+										<abscissa><real>[...]</real></abscissa>
+										<ordinate><real>[...]</real></ordinate>
+									</point>
+								</points>
+							</criterionFunction>
+						</criterion>
+					</criteria>
+				]]>
+            </xmcda>
         </output>
 
         
