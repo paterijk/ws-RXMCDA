@@ -474,7 +474,7 @@ if (execFlag){
 		
 		status<-putPointsCriterionFunction(outTree, points, mcdaConcept="valueFunctions")
 		
-		status<-saveXML(outTree, file="solution.xml")
+		status<-saveXML(outTree, file="valueFunctions.xml")
 		
 	}	
 	

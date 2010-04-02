@@ -100,9 +100,9 @@
             <xmcda tag="methodMessages"/>
         </output>
         
-        <output id="alternativesPreorder"
-            name="alternativesPreorder"
-            displayName="alternativesPreorder">
+        <output id="alternativesOrder"
+            name="alternativesOrder"
+            displayName="alternativesOrder">
             
             <documentation>
                 <description>A valued relation relative to the preorder of the alternatives. A numeric &lt;value&gt; indicates a minimal preference threshold for each &lt;pair&gt; of the relation. One &lt;pair&gt; represents a constraint of the type "alternative a is preferred to alternative b with preference threshold delta".</description>
