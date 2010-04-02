@@ -35,13 +35,44 @@ if (inherits(tmpErr, 'try-error')){
 
 if (is.null(errFile)){
 	
-	# files were correctly loaded
+	# mandatory files were correctly loaded
 	# now we check if files are valid according to xsd
 	
 	if (checkXSD(treeAlternatives)==0)
 	{
 		errFile<-"Alternatives file is not XMCDA valid."	
 	}
+}
+
+# let us now load the optional files
+
+if (is.null(errFile)){
+	
+	# let us now load the optional xml files
+	# if an error occurs, we suppose that the file was not present (optional files!!)
+	
+	treeSeed <- NULL
+	
+	tmpErr<-try(
+			{
+				treeSeed<-xmlTreeParse("seed.xml",useInternalNodes=TRUE)
+			}
+	)
+}
+
+# let us now check if the optional files are valid
+
+if (is.null(errFile)){
+	
+	# we must now check if the optional files are XMCDA valid
+	# for the optional files we first check whether a tree has been loaded
+	
+	if ((!is.null(treeSeed))){
+		if (checkXSD(treeSeed)==0)
+		{
+			errFile<-"Seed file is not XMCDA valid."	
+		}
+	}	
 }
 
 if (is.null(errFile)){
@@ -76,6 +107,26 @@ if (is.null(errFile)){
 		} 	
 	}
 	
+	# for the optional files we must also check whether a tree has been loaded
+	
+	seed<-NULL
+	if (flag){
+		if ((!is.null(treeSeed)))
+		{
+			seedParam<-getParameters(treeSeed, "seed")
+			if (seedParam$status == "OK") 
+			{
+				seed<-seedParam[[1]]
+			}
+			else
+			{
+				errData <- seedParam$status
+				flag <- FALSE
+			}
+		}
+	}
+	
+	
 	if (is.null(errData))
 	{
 		# all data elements have been correctly extracted from the xml trees
@@ -84,6 +135,10 @@ if (is.null(errFile)){
 		tmpErr<-try(
 				{
 					library(gtools)
+					
+					if (!is.null(seed)){
+						set.seed(seed)
+					}
 					
 					#dimension du vecteur de permutation. 
 					

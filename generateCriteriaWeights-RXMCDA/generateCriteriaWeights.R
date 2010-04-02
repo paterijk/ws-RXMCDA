@@ -46,6 +46,35 @@ if (is.null(errFile)){
 
 if (is.null(errFile)){
 	
+	# let us now load the optional xml files
+	# if an error occurs, we suppose that the file was not present (optional files!!)
+	
+	treeSeed <- NULL
+	
+	tmpErr<-try(
+			{
+				treeSeed<-xmlTreeParse("seed.xml",useInternalNodes=TRUE)
+			}
+	)
+}
+
+# let us now check if the optional files are valid
+
+if (is.null(errFile)){
+	
+	# we must now check if the optional files are XMCDA valid
+	# for the optional files we first check whether a tree has been loaded
+	
+	if ((!is.null(treeSeed))){
+		if (checkXSD(treeSeed)==0)
+		{
+			errFile<-"Seed file is not XMCDA valid."	
+		}
+	}	
+}
+
+if (is.null(errFile)){
+	
 	# files were correctly loaded and are valid according to xsd
 	
 	errData<-NULL
@@ -76,6 +105,25 @@ if (is.null(errFile)){
 		} 	
 	}
 	
+	# for the optional files we must also check whether a tree has been loaded
+	
+	seed<-NULL
+	if (flag){
+		if ((!is.null(treeSeed)))
+		{
+			seedParam<-getParameters(treeSeed, "seed")
+			if (seedParam$status == "OK") 
+			{
+				seed<-seedParam[[1]]
+			}
+			else
+			{
+				errData <- seedParam$status
+				flag <- FALSE
+			}
+		}
+	}
+	
 	if (is.null(errData))
 	{
 		# all data elements have been correctly extracted from the xml trees
@@ -84,13 +132,17 @@ if (is.null(errFile)){
 		tmpErr<-try(
 				{
 					
+					if (!is.null(seed)){
+						set.seed(seed)
+					}
+					
 					#génération des poids (aléatoire)
 					pds<-c(runif(numCrit,0,1))
 					
 					somm<-sum(pds)
 					
 					#Normalisation des poids
-					pds_norm<-c(runif(numCrit,0,1))
+					pds_norm<-pds
 					for (i in 1:numCrit) pds_norm[i]<-pds[i]/somm
 					
 					

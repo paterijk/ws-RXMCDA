@@ -4,19 +4,19 @@
     <criterionValue>
       <criterionID>g1</criterionID>
       <value>
-        <real>0.250141525878388</real>
+        <real>0.275341596652401</real>
       </value>
     </criterionValue>
     <criterionValue>
       <criterionID>g2</criterionID>
       <value>
-        <real>0.139049423086456</real>
+        <real>0.230525569064476</real>
       </value>
     </criterionValue>
     <criterionValue>
       <criterionID>g3</criterionID>
       <value>
-        <real>0.610809051035156</real>
+        <real>0.494132834283123</real>
       </value>
     </criterionValue>
   </criteriaValues>
