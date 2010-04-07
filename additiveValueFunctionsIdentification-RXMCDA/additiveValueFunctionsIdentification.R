@@ -416,26 +416,23 @@ if (is.null(errFile)){
 					
 #Routines de programmation linéaire pour les fonctions de valeur additive
 					sol_lp<-lp("max",obj1,mat_cont2,dir1,rhs1)
-					print(M)
-					print(MM)
-					print(sol_lp$solution)
 					
 					# if there is a solution, we build the data structure containing the points of the value functions
-					
+
 					if(sol_lp$status == 0){
 						
 						points<-list()
 						for (i in 1:nc){
 							tmp<-c()
 							for (j in 1:dim(MM)[1]){
-								tmp<-rbind(tmp,c(MM[j,i],sol_lp$solution[j*i]))
+								
+								tmp<-rbind(tmp,c(MM[j,i],sol_lp$solution[(i-1)*dim(MM)[1]+j]))
 							}
 							
 							points<-c(points,list(tmp))
 							names(points)[i]<-critIDs[i]
 						}
 					}
-					
 					
 				}
 		)

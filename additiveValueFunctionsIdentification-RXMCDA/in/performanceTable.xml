@@ -1,24 +1,23 @@
-<?xml version="1.0"?>
-<xmcda:XMCDA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.0.0.xsd">
+<xmcda:XMCDA xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.0.0.xsd" xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <performanceTable mcdaConcept="performanceTable">
     <alternativePerformances>
       <alternativeID>x1</alternativeID>
       <performance>
         <criterionID>g1</criterionID>
         <value>
-          <real>0.930274839047343</real>
+          <real>0.9413371195551</real>
         </value>
       </performance>
       <performance>
         <criterionID>g2</criterionID>
         <value>
-          <real>0.773513268213719</real>
+          <real>0.149603018537164</real>
         </value>
       </performance>
       <performance>
         <criterionID>g3</criterionID>
         <value>
-          <real>0.111220742808655</real>
+          <real>0.759020662400872</real>
         </value>
       </performance>
     </alternativePerformances>
@@ -27,19 +26,19 @@
       <performance>
         <criterionID>g1</criterionID>
         <value>
-          <real>0.414731791475788</real>
+          <real>0.0625325089786202</real>
         </value>
       </performance>
       <performance>
         <criterionID>g2</criterionID>
         <value>
-          <real>0.301601779647171</real>
+          <real>0.782266777940094</real>
         </value>
       </performance>
       <performance>
         <criterionID>g3</criterionID>
         <value>
-          <real>0.96465529431589</real>
+          <real>0.215767673449591</real>
         </value>
       </performance>
     </alternativePerformances>
@@ -48,19 +47,19 @@
       <performance>
         <criterionID>g1</criterionID>
         <value>
-          <real>0.79281465569511</real>
+          <real>0.147064276272431</real>
         </value>
       </performance>
       <performance>
         <criterionID>g2</criterionID>
         <value>
-          <real>0.143873959081247</real>
+          <real>0.257643673336133</real>
         </value>
       </performance>
       <performance>
         <criterionID>g3</criterionID>
         <value>
-          <real>0.175450061215088</real>
+          <real>0.228668020572513</real>
         </value>
       </performance>
     </alternativePerformances>
