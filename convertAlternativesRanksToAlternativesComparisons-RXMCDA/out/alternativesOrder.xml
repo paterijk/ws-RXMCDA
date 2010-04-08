@@ -4,7 +4,7 @@
     <pairs>
       <pair>
         <initial>
-          <alternativeID>x1</alternativeID>
+          <alternativeID>x3</alternativeID>
         </initial>
         <terminal>
           <alternativeID>x2</alternativeID>
@@ -18,7 +18,7 @@
           <alternativeID>x2</alternativeID>
         </initial>
         <terminal>
-          <alternativeID>x3</alternativeID>
+          <alternativeID>x1</alternativeID>
         </terminal>
         <value>
           <real>1e-07</real>

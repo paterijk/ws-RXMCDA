@@ -142,7 +142,7 @@ if (is.null(errFile)){
 		tmpErr<-try(
 				{
 					
-					orderedAltRanks <- altRanks[order(altRanks[,2],decreasing=TRUE),]
+					orderedAltRanks <- altRanks[order(altRanks[,2],decreasing=FALSE),]
 					order<-c()
 					for (i in 1:(dim(orderedAltRanks)[1]-1)){
 						order<-rbind(order,c(altIDs[orderedAltRanks[i,1]], altIDs[orderedAltRanks[i+1,1]], sepThr))		
