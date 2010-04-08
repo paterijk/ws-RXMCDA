@@ -3,19 +3,19 @@
     <alternativeValue>
       <alternativeID>x1</alternativeID>
       <value>
-        <real>3</real>
+        <real>1</real>
       </value>
     </alternativeValue>
     <alternativeValue>
       <alternativeID>x2</alternativeID>
       <value>
-        <real>1</real>
+        <real>2</real>
       </value>
     </alternativeValue>
     <alternativeValue>
       <alternativeID>x3</alternativeID>
       <value>
-        <real>2</real>
+        <real>3</real>
       </value>
     </alternativeValue>
   </alternativesValues>
