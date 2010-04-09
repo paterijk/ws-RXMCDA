@@ -12,6 +12,12 @@
     <alternative id="x3">
       <active>true</active>
     </alternative>
+    <alternative id="x4">
+      <active>true</active>
+    </alternative>
+    <alternative id="x5">
+      <active>true</active>
+    </alternative>
   </alternatives>
   
 </xmcda:XMCDA>

@@ -5,19 +5,37 @@
       <performance>
         <criterionID>g1</criterionID>
         <value>
-          <real>0.9413371195551</real>
+          <real>0.846770677249879</real>
         </value>
       </performance>
       <performance>
         <criterionID>g2</criterionID>
         <value>
-          <real>0.149603018537164</real>
+          <real>0.518893430707976</real>
         </value>
       </performance>
       <performance>
         <criterionID>g3</criterionID>
         <value>
-          <real>0.759020662400872</real>
+          <real>0.516311288345605</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4</criterionID>
+        <value>
+          <real>0.858442691154778</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5</criterionID>
+        <value>
+          <real>0.474488736595958</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6</criterionID>
+        <value>
+          <real>0.268221504986286</real>
         </value>
       </performance>
     </alternativePerformances>
@@ -26,19 +44,37 @@
       <performance>
         <criterionID>g1</criterionID>
         <value>
-          <real>0.0625325089786202</real>
+          <real>0.224376347847283</real>
         </value>
       </performance>
       <performance>
         <criterionID>g2</criterionID>
         <value>
-          <real>0.782266777940094</real>
+          <real>0.505648225778714</real>
         </value>
       </performance>
       <performance>
         <criterionID>g3</criterionID>
         <value>
-          <real>0.215767673449591</real>
+          <real>0.402238394133747</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4</criterionID>
+        <value>
+          <real>0.279918514890596</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5</criterionID>
+        <value>
+          <real>0.982760600978509</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6</criterionID>
+        <value>
+          <real>0.0301293595694005</real>
         </value>
       </performance>
     </alternativePerformances>
@@ -47,19 +83,115 @@
       <performance>
         <criterionID>g1</criterionID>
         <value>
-          <real>0.147064276272431</real>
+          <real>0.414945120690390</real>
         </value>
       </performance>
       <performance>
         <criterionID>g2</criterionID>
         <value>
-          <real>0.257643673336133</real>
+          <real>0.494396526832134</real>
         </value>
       </performance>
       <performance>
         <criterionID>g3</criterionID>
         <value>
-          <real>0.228668020572513</real>
+          <real>0.977500551845878</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4</criterionID>
+        <value>
+          <real>0.0407303797546774</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5</criterionID>
+        <value>
+          <real>0.0857765697874129</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6</criterionID>
+        <value>
+          <real>0.716979612130672</real>
+        </value>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>x4</alternativeID>
+      <performance>
+        <criterionID>g1</criterionID>
+        <value>
+          <real>0.463020778028294</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g2</criterionID>
+        <value>
+          <real>0.889513673027977</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g3</criterionID>
+        <value>
+          <real>0.379524806048721</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4</criterionID>
+        <value>
+          <real>0.285972283454612</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5</criterionID>
+        <value>
+          <real>0.926218185340986</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6</criterionID>
+        <value>
+          <real>0.444532860768959</real>
+        </value>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>x5</alternativeID>
+      <performance>
+        <criterionID>g1</criterionID>
+        <value>
+          <real>0.299852519761771</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g2</criterionID>
+        <value>
+          <real>0.982341532362625</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g3</criterionID>
+        <value>
+          <real>0.532150558428839</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4</criterionID>
+        <value>
+          <real>0.653846477391198</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5</criterionID>
+        <value>
+          <real>0.131031926255673</real>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6</criterionID>
+        <value>
+          <real>0.240591716952622</real>
         </value>
       </performance>
     </alternativePerformances>

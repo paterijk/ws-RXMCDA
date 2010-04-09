@@ -5,7 +5,7 @@
       <text>OK</text>
     </logMessage>
     <logMessage name="objectiveFunction">
-      <text>0.282330671021158</text>
+      <text>0.139532685234708</text>
     </logMessage>
     <logMessage name="solverStatus">
       <text>Success</text>

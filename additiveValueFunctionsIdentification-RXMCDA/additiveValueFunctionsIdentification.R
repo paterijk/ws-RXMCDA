@@ -259,13 +259,9 @@ if (is.null(errFile)){
 					na<- dim(perfTable)[1]
 					nc<-dim(perfTable)[2]
 					delta.C <- sepThr
-					
-					# we need to transform the ranks matrix in order 
-					# to have the lowest value for the best alternative!
-					# ordre <- -ranks[,2] + max(ranks[,2]) + 1
-				
+						
 					# the best alternative has the lowest rank
-					ordre <- ranks[,2]
+					ordre <- ranks[order(ranks[,2],decreasing=FALSE),1]
 					
 					M<-perfTable
 					

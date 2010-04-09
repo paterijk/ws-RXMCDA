@@ -6,7 +6,7 @@
         <points>
           <point>
             <abscissa>
-              <real>0.0625325089786202</real>
+              <real>0.224376347847283</real>
             </abscissa>
             <ordinate>
               <real>0</real>
@@ -14,10 +14,10 @@
           </point>
           <point>
             <abscissa>
-              <real>0.9413371195551</real>
+              <real>0.846770677249879</real>
             </abscissa>
             <ordinate>
-              <real>0</real>
+              <real>0.234215680540898</real>
             </ordinate>
           </point>
         </points>
@@ -28,7 +28,7 @@
         <points>
           <point>
             <abscissa>
-              <real>0.149603018537164</real>
+              <real>0.494396526832134</real>
             </abscissa>
             <ordinate>
               <real>0</real>
@@ -36,10 +36,10 @@
           </point>
           <point>
             <abscissa>
-              <real>0.782266777940094</real>
+              <real>0.982341532362625</real>
             </abscissa>
             <ordinate>
-              <real>0.358834664489421</real>
+              <real>0</real>
             </ordinate>
           </point>
         </points>
@@ -50,7 +50,7 @@
         <points>
           <point>
             <abscissa>
-              <real>0.215767673449591</real>
+              <real>0.379524806048721</real>
             </abscissa>
             <ordinate>
               <real>0</real>
@@ -58,10 +58,76 @@
           </point>
           <point>
             <abscissa>
-              <real>0.759020662400872</real>
+              <real>0.977500551845878</real>
             </abscissa>
             <ordinate>
-              <real>0.641165335510579</real>
+              <real>0.351322345894098</real>
+            </ordinate>
+          </point>
+        </points>
+      </criterionFunction>
+    </criterion>
+    <criterion id="g4">
+      <criterionFunction>
+        <points>
+          <point>
+            <abscissa>
+              <real>0.0407303797546774</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.858442691154778</real>
+            </abscissa>
+            <ordinate>
+              <real>0.3137736840223</real>
+            </ordinate>
+          </point>
+        </points>
+      </criterionFunction>
+    </criterion>
+    <criterion id="g5">
+      <criterionFunction>
+        <points>
+          <point>
+            <abscissa>
+              <real>0.0857765697874129</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.982760600978509</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+        </points>
+      </criterionFunction>
+    </criterion>
+    <criterion id="g6">
+      <criterionFunction>
+        <points>
+          <point>
+            <abscissa>
+              <real>0.0301293595694005</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.716979612130672</real>
+            </abscissa>
+            <ordinate>
+              <real>0.100688289542704</real>
             </ordinate>
           </point>
         </points>

@@ -9,7 +9,9 @@
     <criterion id="g1"/>
     <criterion id="g2"/>
     <criterion id="g3"/>
-    <!-- <criterion id="g4"/> -->
+    <criterion id="g4"/>
+    <criterion id="g5"/>
+    <criterion id="g6"/>
     
   </criteria>
   

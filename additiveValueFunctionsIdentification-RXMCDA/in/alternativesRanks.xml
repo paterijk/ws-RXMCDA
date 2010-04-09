@@ -9,11 +9,23 @@
     <alternativeValue>
       <alternativeID>x2</alternativeID>
       <value>
-        <real>2</real>
+        <real>5</real>
       </value>
     </alternativeValue>
     <alternativeValue>
       <alternativeID>x3</alternativeID>
+      <value>
+        <real>2</real>
+      </value>
+    </alternativeValue>
+    <alternativeValue>
+      <alternativeID>x4</alternativeID>
+      <value>
+        <real>4</real>
+      </value>
+    </alternativeValue>
+    <alternativeValue>
+      <alternativeID>x5</alternativeID>
       <value>
         <real>3</real>
       </value>
