@@ -77,16 +77,6 @@ if (is.null(errFile)){
 		errFile<-"Cannot read the performance table file."
 	}
 }
-if (is.null(errFile)){
-	tmpErr<-try(
-			{
-				treeSegments<-xmlTreeParse("segments.xml",useInternalNodes=TRUE)
-			}
-	)
-	if (inherits(tmpErr, 'try-error')){
-		errFile<-"Cannot read the number of segments file."
-	}
-}
 
 if (is.null(errFile)){
 	
@@ -110,12 +100,6 @@ if (is.null(errFile)){
 		}
 	}	
 	if (is.null(errFile)){
-		if (checkXSD(treeSegments)==0)
-		{
-			errFile<-"Segments file is not XMCDA valid."	
-		}
-	}	
-	if (is.null(errFile)){
 		if (checkXSD(treePerformanceTable)==0)
 		{
 			errFile<-"Performance table file is not XMCDA valid."	
@@ -127,6 +111,33 @@ if (is.null(errFile)){
 			errFile<-"Separation threshold parameters file is not XMCDA valid."	
 		}
 	}
+}
+
+if (is.null(errFile)){
+	
+	# let us now load the optional xml file
+	# if an error occurs, we suppose that the file was not present (optional files!!)
+	
+	treeSegments<-NULL
+	
+	tmpErr<-try(
+			{
+				treeSegments<-xmlTreeParse("segments.xml",useInternalNodes=TRUE)
+			}
+	)
+}
+
+if (is.null(errFile)){
+	
+	# we must now check if the optional file is XMCDA valid
+	# for the optional files we first check whether a tree has been loaded
+	
+	if ((!is.null(treeSegments))){
+		if (checkXSD(treeSegments)==0)
+		{
+			errFile<-"Segments file is not XMCDA valid."	
+		}
+	}	
 }
 
 if (is.null(errFile)){
@@ -211,25 +222,12 @@ if (is.null(errFile)){
 		if ((separationThresholds$status == "OK"))
 		{
 			sepThr<-separationThresholds[[1]]
-			criteriaSegments<-getParameters(treeSegments, "criteriaSegments")
-			
+			alternativesRanks <- getAlternativesValues(treeAlternativesRanks, altIDs)
 		}
 		else
 		{
 			errData<-separationThresholds$status
 			flag<-FALSE
-		}
-	}
-	if (flag){
-		if (criteriaSegments$status == "OK") 
-		{
-			segs<-criteriaSegments[[1]]
-			alternativesRanks <- getAlternativesValues(treeAlternativesRanks, altIDs)
-		}
-		else
-		{
-			errData <- criteriaSegments$status
-			flag <- FALSE
 		}
 	}
 	if (flag){
@@ -244,6 +242,25 @@ if (is.null(errFile)){
 		}
 	}
 	
+	# for the optional files we must also check whether a tree has been loaded
+	
+	criteriaSegments<-NULL
+	if (flag){
+		if ((!is.null(treeSegments)))
+		{
+			criteriaSegments<-getParameters(treeSegments, "criteriaSegments")
+			if (criteriaSegments$status == "OK") 
+			{
+				segs<-criteriaSegments[[1]]
+			}
+			else
+			{
+				errData <- criteriaSegments$status
+				flag <- FALSE
+			}
+		}
+	}
+	
 	
 	
 	
@@ -255,25 +272,35 @@ if (is.null(errFile)){
 					
 # Change names of variables to fit Helene's code
 					
-					Nb_mor <- segs
+				    
+				
 					na<- dim(perfTable)[1]
 					nc<-dim(perfTable)[2]
 					delta.C <- sepThr
-						
+					
+					# if no criteriaSegments file has been loaded, this means that we are just looking for a general additive
+					# value function, and in that case, we have na-1 segments (between the alternatives)
+				
+					if (!is.null(criteriaSegments)){
+						Nb_mor <- segs
+					}
+					else
+					{
+						Nb_mor <- na-1
+					}
+					
 					# the best alternative has the lowest rank
 					ordre <- ranks[order(ranks[,2],decreasing=FALSE),1]
 					
 					M<-perfTable
-					
-					if (Nb_mor == na) Nb_mor <- Nb_mor-1
-					
+									
 #**************************************************************
 # g  est la matrice qui contient les points de cassure
 #Dans le cas où le nombre de morceaux = na (le nombre d'alternatives), les colonnes de la matrice g
 #correspondent aux colonnes de la matrice de départ (ici M) triée dans l'ordre croissant
 #En effet les points de cassure correspondent aux évaluations des alternatives sur les différents critères.
 					g<-function(h) {
-						if(Nb_mor != na){
+						if(!is.null(criteriaSegments)){
 							g<-matrix(c(rep(0,nc*(Nb_mor+1))),Nb_mor+1,nc)
 							i<-1
 							while(i <= nc){
@@ -287,7 +314,10 @@ if (is.null(errFile)){
 								i<-i+1
 							}
 						}else {
-							g<-matrix(c(rep(0,nc*Nb_mor)),Nb_mor,nc)
+							# no criteria segments file has been loaded and we look for the general additive model
+							# then there are Nb_mor + 1 edges of the segments
+							# the edges are given by the values in the performance table
+							g<-matrix(c(rep(0,nc*(Nb_mor+1))),(Nb_mor+1),nc)
 							for(i in 1:nc)g[,i]<-sort(M[,i])
 						}
 						return(g)	
@@ -432,6 +462,7 @@ if (is.null(errFile)){
 							points<-c(points,list(tmp))
 							names(points)[i]<-critIDs[i]
 						}
+						
 					}
 					
 				}

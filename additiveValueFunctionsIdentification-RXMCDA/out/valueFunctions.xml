@@ -14,10 +14,42 @@
           </point>
           <point>
             <abscissa>
+              <real>0.348855213727802</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.473334079608321</real>
+            </abscissa>
+            <ordinate>
+              <real>0.346772392835081</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.59781294548884</real>
+            </abscissa>
+            <ordinate>
+              <real>0.346772392835081</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.72229181136936</real>
+            </abscissa>
+            <ordinate>
+              <real>0.346772392835081</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
               <real>0.846770677249879</real>
             </abscissa>
             <ordinate>
-              <real>0.234215680540898</real>
+              <real>0.433035577508172</real>
             </ordinate>
           </point>
         </points>
@@ -29,6 +61,38 @@
           <point>
             <abscissa>
               <real>0.494396526832134</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.591985527938232</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.68957452904433</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.787163530150429</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.884752531256527</real>
             </abscissa>
             <ordinate>
               <real>0</real>
@@ -58,10 +122,42 @@
           </point>
           <point>
             <abscissa>
+              <real>0.499119955208152</real>
+            </abscissa>
+            <ordinate>
+              <real>0.534559454958919</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.618715104367584</real>
+            </abscissa>
+            <ordinate>
+              <real>0.534559454958919</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.738310253527015</real>
+            </abscissa>
+            <ordinate>
+              <real>0.534559454958919</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.857905402686447</real>
+            </abscissa>
+            <ordinate>
+              <real>0.534559454958919</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
               <real>0.977500551845878</real>
             </abscissa>
             <ordinate>
-              <real>0.351322345894098</real>
+              <real>0.566964422491828</real>
             </ordinate>
           </point>
         </points>
@@ -80,10 +176,42 @@
           </point>
           <point>
             <abscissa>
+              <real>0.204272842034698</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.367815304314718</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.531357766594738</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.694900228874758</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
               <real>0.858442691154778</real>
             </abscissa>
             <ordinate>
-              <real>0.3137736840223</real>
+              <real>0</real>
             </ordinate>
           </point>
         </points>
@@ -95,6 +223,38 @@
           <point>
             <abscissa>
               <real>0.0857765697874129</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.265173376025632</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.444570182263851</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.62396698850207</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.80336379474029</real>
             </abscissa>
             <ordinate>
               <real>0</real>
@@ -124,10 +284,42 @@
           </point>
           <point>
             <abscissa>
+              <real>0.167499410081655</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.304869460593909</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.442239511106163</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
+              <real>0.579609561618418</real>
+            </abscissa>
+            <ordinate>
+              <real>0</real>
+            </ordinate>
+          </point>
+          <point>
+            <abscissa>
               <real>0.716979612130672</real>
             </abscissa>
             <ordinate>
-              <real>0.100688289542704</real>
+              <real>0</real>
             </ordinate>
           </point>
         </points>
