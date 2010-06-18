@@ -60,6 +60,38 @@ if (is.null(errFile)){
 	}	
 }
 
+# let us now load the optional files
+
+if (is.null(errFile)){
+	
+	# let us now load the optional xml files
+	# if an error occurs, we suppose that the file was not present (optional files!!)
+	
+	treeMaxMin <- NULL
+	
+	tmpErr<-try(
+			{
+				treeMaxMin<-xmlTreeParse("maxMin.xml",useInternalNodes=TRUE)
+			}
+	)
+}
+
+# let us now check if the optional files are valid
+
+if (is.null(errFile)){
+	
+	# we must now check if the optional files are XMCDA valid
+	# for the optional files we first check whether a tree has been loaded
+	
+	if ((!is.null(treeMaxMin))){
+		if (checkXSD(treeMaxMin)==0)
+		{
+			errFile<-"Max-min file is not XMCDA valid."	
+		}
+	}	
+}
+
+
 if (is.null(errFile)){
 	
 	# files were correctly loaded and are valid according to xsd
@@ -94,6 +126,26 @@ if (is.null(errFile)){
 		}
 	}	
 	
+	# for the optional files we must also check whether a tree has been loaded
+	
+	maxmin<-NULL
+	if (flag){
+		if ((!is.null(treeMaxMin)))
+		{
+			maxminParam<-getParameters(treeMaxMin, "maxMin")
+			if (maxminParam$status == "OK") 
+			{
+				maxmin<-maxminParam[[1]]
+			}
+			else
+			{
+				errData <- maxminParam$status
+				flag <- FALSE
+			}
+		}
+	}
+	
+	
 	if (is.null(errData)){
 		
 		# all data elements have been correctly extracted from the xml trees
@@ -101,7 +153,12 @@ if (is.null(errFile)){
 		
 		tmpErr<-try(
 				{
-					ranks<-rank(overallVals[,2],ties.method="max")
+					ranks<-rank(overallVals[,2],ties.method="min")
+					if (!is.null(maxmin)){
+						if (maxmin == "max"){
+							ranks <- -ranks + max(ranks) + 1
+						}
+					}
 					altRanks<-c()
 					for (i in 1:length(ranks)){
 						altRanks<-rbind(altRanks,c(overallVals[i,1],ranks[i]))
