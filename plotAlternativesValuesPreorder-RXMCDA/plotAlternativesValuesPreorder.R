@@ -179,6 +179,10 @@ if (is.null(errFile)){
 		
 		if (inherits(tmpErr, 'try-error')){
 			errCalc<-"Cannot plot alternatives values."
+			setwd(outDirectory)
+			file.remove("out.png")
+			file.remove("out.pdf")
+			file.remove("out.base64")
 		} else {
 			execFlag<-TRUE
 		}

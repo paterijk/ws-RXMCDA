@@ -270,6 +270,10 @@ if (is.null(errFile)){
 		
 		if (inherits(tmpErr, 'try-error')){
 			errCalc<-"Cannot plot Gaia plane."
+			setwd(outDirectory)
+			file.remove("out.png")
+			file.remove("out.pdf")
+			file.remove("out.base64")
 		} else {
 			execFlag<-TRUE
 		}
