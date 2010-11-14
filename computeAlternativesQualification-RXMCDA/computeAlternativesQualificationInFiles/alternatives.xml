@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xmcdaKappalab.xsl"?>
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 file:/home/pat/Documents/currentResearch/DecisionDeck/svn-DecisionDeck/XMCDA/XMCDA-2.0.0.xsd">
+	
+	<alternatives>
+		<alternative id="a01">
+			<active>true</active>
+		</alternative>
+		<alternative id="a02">
+			<active>true</active>
+		</alternative>
+		<alternative id="a03">
+			<active>true</active>
+		</alternative>
+		<alternative id="a04">
+			<active>false</active>
+		</alternative>
+		<alternative id="x5">
+			<active>true</active>
+		</alternative>
+		<alternative id="x6">
+			<active>false</active>
+		</alternative>
+		<alternative id="x7">
+			<active>false</active>
+		</alternative> 
+		<alternative id="x8">
+			<active>false</active>
+		</alternative>
+		<alternative id="x9">
+			<active>false</active>
+		</alternative>
+		<alternative id="x10">
+			<active>false</active>
+		</alternative>
+		<alternative id="x11">
+			<active>false</active>
+		</alternative>
+		<alternative id="x12">
+			<active>false</active>
+		</alternative>
+		<alternative id="x13">
+			<active>false</active>
+		</alternative>
+		<alternative id="x14">
+			<active>false</active>
+		</alternative>
+		<alternative id="x15">
+			<active>false</active>
+		</alternative>
+	</alternatives>
+	
+</xmcda:XMCDA>
