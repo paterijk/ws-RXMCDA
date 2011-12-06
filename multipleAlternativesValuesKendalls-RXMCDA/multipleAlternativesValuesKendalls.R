@@ -52,7 +52,8 @@ if (is.null(errFile)){
 
 treeList <- list()
 
-alternativesRanksFiles <- files[files != "alternatives.xml"]
+alternativesRanksFiles <- sort(files[files != "alternatives.xml"], decreasing=FALSE)
+
 
 for (i in 1:(length(alternativesRanksFiles))){
 	# we start at two to get the alternativesValues files
