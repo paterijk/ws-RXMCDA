@@ -52,14 +52,16 @@ if (is.null(errFile)){
 
 treeList <- list()
 
-for (i in 1:(length(files)-1)){
+alternativesRanksFiles <- files[files != "alternatives.xml"]
+
+for (i in 1:(length(alternativesRanksFiles))){
 	# we start at two to get the alternativesValues files
 	
 	err1<-NULL
 	tmpErr<-NULL
 	tmpErr<-try(
 			{
-				tree<-xmlTreeParse(files[i],useInternalNodes=TRUE)
+				tree<-xmlTreeParse(alternativesRanksFiles[i],useInternalNodes=TRUE)
 			}
 	)
 	
@@ -119,9 +121,7 @@ if (is.null(errFile)){
 	
 				altValues1<-getAlternativesValues(treeList[[i]], altIDs)
 				altValues2<-getAlternativesValues(treeList[[j]], altIDs)
-				print(paste(i,j))
-				print(altValues1)
-				print(altValues2)
+
 				if (altValues1$status == "OK") 
 				{
 					altVals1<-altValues1[[1]]
