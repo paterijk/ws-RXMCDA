@@ -137,19 +137,25 @@ if (is.null(errFile)){
 					}
 					
 					#génération des poids (aléatoire)
-					pds<-c(runif(numCrit,0,1))
-					
-					somm<-sum(pds)
-					
-					#Normalisation des poids
-					pds_norm<-pds
-					for (i in 1:numCrit) pds_norm[i]<-pds[i]/somm
-					
+#					pds<-c(runif(numCrit,0,1))
+#					
+#					somm<-sum(pds)
+#					
+#					#Normalisation des poids
+#					pds_norm<-pds
+#					for (i in 1:numCrit) pds_norm[i]<-pds[i]/somm
+					pds <- c(runif(numCrit - 1, 0, 1))
+					pds <- append(pds, 0)
+					pds <- append(pds, 1)
+					pds <- sort(pds, decreasing = TRUE)
+					for (i in 1:numCrit)
+						pds[i] <- pds[i] - pds[i + 1]
 					
 					critVals<-c()
 					for (i in 1:numCrit)
 					{
-						critVals<-rbind(critVals,c(i,pds_norm[i]))	
+#						critVals<-rbind(critVals,c(i,pds_norm[i]))
+						critVals<-rbind(critVals,c(i,pds[i]))
 					}
 				}
 		)
