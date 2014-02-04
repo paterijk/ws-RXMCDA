@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<xmcda:XMCDA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmcda="http://www.decision-deck.org/2012/XMCDA-2.2.0" xsi:schemaLocation="http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd">
+    <criteriaComparisons>
+        <pairs>
+            <pair>
+                <initial>
+                    <criterionID>g1</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g2</criterionID>
+                </terminal>
+                <value>
+                    <real>0.5</real>
+                </value>
+            </pair>
+            <pair>
+                <initial>
+                    <criterionID>g3</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g2</criterionID>
+                </terminal>
+                <value>
+                    <real>0.7</real>
+                </value>
+            </pair>
+            <pair>
+                <initial>
+                    <criterionID>g4</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g2</criterionID>
+                </terminal>
+                <value>
+                    <real>0.8</real>
+                </value>
+            </pair>
+            <pair>
+                <initial>
+                    <criterionID>g3</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g4</criterionID>
+                </terminal>
+                <value>
+                    <real>0.1</real>
+                </value>
+            </pair>
+            <pair>
+                <initial>
+                    <criterionID>g5</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g4</criterionID>
+                </terminal>
+                <value>
+                    <real>0.9</real>
+                </value>
+            </pair>
+            <pair>
+                <initial>
+                    <criterionID>g6</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g4</criterionID>
+                </terminal>
+                <value>
+                    <real>0.7</real>
+                </value>
+            </pair>
+            <pair>
+                <initial>
+                    <criterionID>g7</criterionID>
+                </initial>
+                <terminal>
+                    <criterionID>g4</criterionID>
+                </terminal>
+                <value>
+                    <real>0.9</real>
+                </value>
+            </pair>
+            
+        </pairs>
+    </criteriaComparisons>
+    
+    
+    
+    
+    
+    
+</xmcda:XMCDA>

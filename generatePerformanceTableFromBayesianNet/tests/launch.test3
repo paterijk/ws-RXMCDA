@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# not possible to build the data and no intervals given
+
+R --slave --vanilla --file="../generate.R" --args "${PWD}/in3" "${PWD}/out3" "criteria.xml" "graph.xml" "means.xml" "standardDeviations.xml" "parameters.xml" "messages.xml" "performanceTable.xml" "alternatives.xml"

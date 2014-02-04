@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# no data produced, but indicates which pair to change and gives a valid interval
+
+R --slave --vanilla --file="../generate.R" --args "${PWD}/in2" "${PWD}/out2" "criteria.xml" "graph.xml" "means.xml" "standardDeviations.xml" "parameters.xml" "messages.xml" "performanceTable.xml" "alternatives.xml"

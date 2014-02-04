@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# no error for this execution
+
+R --slave --vanilla --file="../generate.R" --args "${PWD}/in1" "${PWD}/out1" "criteria.xml" "graph.xml" "means.xml" "standardDeviations.xml" "parameters.xml" "messages.xml" "performanceTable.xml" "alternatives.xml"

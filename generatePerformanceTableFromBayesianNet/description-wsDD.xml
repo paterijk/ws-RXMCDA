@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<program_description xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.decision-deck.org/ws/_downloads/description.xsd">
+    <program provider="RXMCDA"
+        name="generatePerformanceTableFromBayesianNet"
+        displayName="generatePerformanceTableFromBayesianNet"
+        version="1.0" />
+    <documentation>
+        <description>Generates a random performance table, given a weighted bayesian net representing the interactions (and their correlation indexes) between the criteria, together with desired mean and standard deviation values for each criterion. The number of alternatives to generate can be specified, as well as the prefix to be used for the ids of these alternatives. An optional seed can also be given.</description>
+        <contact>Patrick Meyer (patrick.meyer@telecom-bretagne.eu) and Marc Pirlot (marc.pirlot@umons.be).</contact>
+    </documentation>
+    
+    
+    <parameters>
+        
+        <input id="in1"
+            name="parameters"
+            displayName="seed"
+            isoptional="1">
+            <documentation>
+                <description>The seed for the random numbers generator (integer).</description>
+            </documentation>
+            <xmcda tag="methodParameters">
+                <![CDATA[
+                    <methodParameters>
+                        <parameter
+                             name="seed"> <!-- REQUIRED  -->
+                            <value>
+                                <integer>%1</integer>
+                            </value>
+                        </parameter>
+                    </methodParameters>
+                    ]]>
+            </xmcda>
+            
+            <gui status="alwaysGUI">
+                <entry id="%1" type="int" displayName="seed">
+                    <documentation>
+                        <description>The seed for the random numbers generator (integer).</description>
+                    </documentation>
+                    <constraint>
+                        <description>An integer value.</description>
+                        <code>
+                            <![CDATA[
+                               %1 > 0
+                            ]]>
+                        </code>
+                    </constraint>
+                    <defaultValue>1</defaultValue>
+                </entry>
+            </gui>
+        </input>
+        
+        <input id="in2"
+            name="parameters"
+            displayName="number of alternatives"
+            isoptional="0">
+            <documentation>
+                <description>The number of alternatives to generate in the output performance table.</description>
+            </documentation>
+            <xmcda tag="methodParameters">
+                <![CDATA[
+                    <methodParameters>
+                        <parameter
+                             name="numAlt"> <!-- REQUIRED  -->
+                            <value>
+                                <integer>%2</integer>
+                            </value>
+                        </parameter>
+                    </methodParameters>
+                    ]]>
+            </xmcda>
+            
+            <gui status="alwaysGUI">
+                <entry id="%2" type="int" displayName="number of alternatives to generate">
+                    <documentation>
+                        <description>The number of alternatives to generate in the output performance table.</description>
+                    </documentation>
+                    <constraint>
+                        <description>An integer value.</description>
+                        <code>
+                            <![CDATA[
+                               %2 > 0
+                            ]]>
+                        </code>
+                    </constraint>
+                    <defaultValue>2</defaultValue>
+                </entry>
+            </gui>
+        </input>
+        
+        <input id="in3"
+            name="parameters"
+            displayName="prefix for the alternatives ids"
+            isoptional="0">
+            <documentation>
+                <description>The prefix for the ids of the generated alternatives.</description>
+            </documentation>
+            <xmcda tag="methodParameters">
+                <![CDATA[
+                    <methodParameters>
+                        <parameter
+                             name="prefix"> <!-- REQUIRED  -->
+                            <value>
+                                <label>%3</label>
+                            </value>
+                        </parameter>
+                    </methodParameters>
+                    ]]>
+            </xmcda>
+            
+            <gui status="alwaysGUI">
+                <entry id="%3" type="string" displayName="prefix for the alternatives ids">
+                    <documentation>
+                        <description>The prefix for the ids of the generated alternatives.</description>
+                    </documentation>
+                    <constraint>
+                        <description>A string</description>
+                        <code>
+                            ???
+                        </code>
+                    </constraint>
+                    <defaultValue>x</defaultValue>
+                </entry>
+            </gui>
+        </input>
+        
+        
+        <input id="in4" 
+            name="criteria"
+            displayName="criteria"
+            isoptional="0">
+            <documentation>
+                <description>A list of criteria. Criteria can be activated or desactivated via the &lt;active&gt; tag (true or false). By default (no &lt;active&gt; tag), alternatives are considered as active. </description>
+            </documentation>
+            <xmcda tag="criteria">
+                <![CDATA[
+                    <criteria>
+                        <criterion id="...">
+                            <active>[...]</active>
+                            [...]
+                        </criterion>
+                        [...]
+                    </criteria>
+                    ]]>
+            </xmcda>
+        </input>
+        
+        <input id="in5" 
+            name="graph"
+            displayName="net"
+            isoptional="0">
+            <documentation>
+                <description>The bayesian net, weighted by the desired correlations between the criteria.</description>
+            </documentation>
+            <xmcda tag="criteriaComparisons">
+                <![CDATA[
+                    <criteriaComparisons>
+                        <pairs>
+                            <pair>
+                                <initial>
+                                    <criterionID>[...]</criterionID>
+                                </initial>
+                                <terminal>
+                                    <criterionID>[...]</criterionID>
+                                </terminal>
+                                <value>
+                                    <real>[...]</real>
+                                </value>
+                          </pair>
+                          [...]
+                      </pairs>
+                   </criteriaComparisons>
+                    ]]>
+            </xmcda>
+        </input>
+        
+        <input id="in6" 
+            name="means"
+            displayName="means"
+            isoptional="0">
+            <documentation>
+                <description>The desired means of the criteria of the generated performance table.</description>
+            </documentation>
+            <xmcda tag="criteriaValues">
+                <![CDATA[
+                    <criteriaValues>
+                       <criterionValue>
+                           <criterionID>[...]</criterionID>
+                               <value>
+                                   <real>[...]</real>
+                                </value>
+                        </criterionValue>
+                        [...]
+                    </criteriaValues>
+                    ]]>
+            </xmcda>
+        </input>
+        
+        <input id="in6" 
+            name="standardDeviations"
+            displayName="standardDeviations"
+            isoptional="0">
+            <documentation>
+                <description>The desired standard deviations of the criteria of the generated performance table.</description>
+            </documentation>
+            <xmcda tag="criteriaValues">
+                <![CDATA[
+                    <criteriaValues>
+                       <criterionValue>
+                           <criterionID>[...]</criterionID>
+                               <value>
+                                   <real>[...]</real>
+                                </value>
+                        </criterionValue>
+                        [...]
+                    </criteriaValues>
+                    ]]>
+            </xmcda>
+        </input>
+        
+        <output id="out1"
+            name="messages"
+            displayName="messages">
+            
+            <documentation>
+                <description>A list of messages generated by the algorithm.</description>
+            </documentation>
+            <xmcda tag="methodMessages"/>
+        </output>
+        
+        <output id="out2"
+            name="performanceTable"
+            displayName="performanceTable">
+            <documentation>
+                <description>The generated performance table.</description>
+            </documentation>
+            <xmcda tag="performanceTable"/>
+        </output>
+        
+        <output id="out3"
+            name="alternatives"
+            displayName="alternatives">    
+            <documentation>
+                <description>The ids of the generated alternatives.</description>
+            </documentation>
+            <xmcda tag="alternatives">
+                <![CDATA[
+                    <alternatives>
+                        <alternative id="..."/>
+                        [...]
+                    </alternatives>
+                    ]]>
+            </xmcda>
+        </output>
+        
+    </parameters>
+</program_description>
+
