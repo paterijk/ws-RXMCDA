@@ -147,7 +147,7 @@
         
         <input id="in5" 
             name="graph"
-            displayName="net"
+            displayName="bayesian correlations graph"
             isoptional="0">
             <documentation>
                 <description>The bayesian net, weighted by the desired correlations between the criteria.</description>
