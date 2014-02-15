@@ -12,10 +12,10 @@
     
     <parameters>
         
-        <input id="in1"
+        <input id="parameters"
             name="parameters"
             displayName="seed"
-            isoptional="1">
+            isoptional="0">
             <documentation>
                 <description>The seed for the random numbers generator (integer).</description>
             </documentation>
@@ -28,7 +28,19 @@
                                 <integer>%1</integer>
                             </value>
                         </parameter>
-                    </methodParameters>
+                         <parameter
+                             name="numAlt"> <!-- REQUIRED  -->
+                            <value>
+                                <integer>%2</integer>
+                            </value>
+                        </parameter>
+                        <parameter
+                             name="prefix"> <!-- REQUIRED  -->
+                            <value>
+                                <label>%3</label>
+                            </value>
+                        </parameter>
+                   </methodParameters>
                     ]]>
             </xmcda>
             
@@ -47,31 +59,7 @@
                     </constraint>
                     <defaultValue>1</defaultValue>
                 </entry>
-            </gui>
-        </input>
-        
-        <input id="in2"
-            name="parameters"
-            displayName="number of alternatives"
-            isoptional="0">
-            <documentation>
-                <description>The number of alternatives to generate in the output performance table.</description>
-            </documentation>
-            <xmcda tag="methodParameters">
-                <![CDATA[
-                    <methodParameters>
-                        <parameter
-                             name="numAlt"> <!-- REQUIRED  -->
-                            <value>
-                                <integer>%2</integer>
-                            </value>
-                        </parameter>
-                    </methodParameters>
-                    ]]>
-            </xmcda>
-            
-            <gui status="alwaysGUI">
-                <entry id="%2" type="int" displayName="number of alternatives to generate">
+                 <entry id="%2" type="int" displayName="number of alternatives to generate">
                     <documentation>
                         <description>The number of alternatives to generate in the output performance table.</description>
                     </documentation>
@@ -85,44 +73,15 @@
                     </constraint>
                     <defaultValue>2</defaultValue>
                 </entry>
-            </gui>
-        </input>
-        
-        <input id="in3"
-            name="parameters"
-            displayName="prefix for the alternatives ids"
-            isoptional="0">
-            <documentation>
-                <description>The prefix for the ids of the generated alternatives.</description>
-            </documentation>
-            <xmcda tag="methodParameters">
-                <![CDATA[
-                    <methodParameters>
-                        <parameter
-                             name="prefix"> <!-- REQUIRED  -->
-                            <value>
-                                <label>%3</label>
-                            </value>
-                        </parameter>
-                    </methodParameters>
-                    ]]>
-            </xmcda>
-            
-            <gui status="alwaysGUI">
-                <entry id="%3" type="string" displayName="prefix for the alternatives ids">
+                 <entry id="%3" type="string" displayName="prefix for the alternatives ids">
                     <documentation>
                         <description>The prefix for the ids of the generated alternatives.</description>
                     </documentation>
-                    <constraint>
-                        <description>A string</description>
-                        <code>
-                            ???
-                        </code>
-                    </constraint>
                     <defaultValue>x</defaultValue>
                 </entry>
-            </gui>
+          </gui>
         </input>
+        
         
         
         <input id="in4" 
@@ -196,7 +155,7 @@
             </xmcda>
         </input>
         
-        <input id="in6" 
+        <input id="in7" 
             name="standardDeviations"
             displayName="standardDeviations"
             isoptional="0">
