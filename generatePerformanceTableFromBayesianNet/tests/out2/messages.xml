@@ -2,7 +2,7 @@
 <xmcda:XMCDA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmcda="http://www.decision-deck.org/2012/XMCDA-2.2.0" xsi:schemaLocation="http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd">
   <methodMessages>
     <errorMessage name="Error">
-      <text>Error in the parametrization. Wrong correlation in: (g4,g2). Correlation should be in: [ 5.77346035758634,-4.37346035758633 ].</text>
+      <text>Parametrization unsuccessful. Wrong correlation. Correlation for (g4,g2) should be in: [ -0.437346035758633 , 0.577346035758633 ].</text>
     </errorMessage>
   </methodMessages>
 </xmcda:XMCDA>

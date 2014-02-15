@@ -272,7 +272,6 @@ if (is.null(errFile)){
   numCrit <- length(critIDs)
   
   ############# debut programme bayesien ###############################	
-  
   mat.adj<-t(t(convert.graphe.adj(critIDs,numcrit,graph)))
   
   modelstring<-convert.str.adj(mat.adj)
@@ -280,14 +279,12 @@ if (is.null(errFile)){
   network<-model2network(modelstring)
   
   order_topo<-node.ordering(network)
+  nbre.nodes<-length(order_topo)
+
+  mean.topo<-rep(0,nbre.nodes)
+  sigma.topo<-rep(1,nbre.nodes)
   
-  mean<-create.mean.sd(critIDs,numCrit,critMeans,critSD)$Mean
-  
-  sigma<-create.mean.sd(critIDs,numCrit,critMeans,critSD)$Sigma
-  
-  mean.topo<-create.mean.sd.topo(modelstring,mean,sigma)$Mean.topo
-  
-  sigma.topo<-create.mean.sd.topo(modelstring,mean,sigma)$Sigma.topo
+ 
   
   mean.nodes<-create.mean.mat.topo(mean.topo,sigma.topo,mat.adj,order_topo)[[1]]
   
@@ -296,38 +293,101 @@ if (is.null(errFile)){
   list.nodes.bloc<-create.bloc.nodes(mat.adjency.topo,order_topo)
   
   dist<-insert.cor.param(critIDs,graph,list.nodes.bloc,mean.nodes,mat.adjency.topo,network)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   if(dist$State.parametrisation)
   {
     res<-custom.fit(network,dist[[1]])
     gener<-rbn(res,numAlt)
     colnames(gener)<-critIDs
-    performanceTable<-gener
+
+for(numcol in 1:nbre.nodes)		
+{		
+gener[,numcol]<-critMeans[numcol,2]+gener[,numcol]*critSD[numcol,2]
+		
+
+
+
+
+}
+
+performanceTable<-gener
     
     altIDs <- c()
-    for (i in 1:numAlt)
-      
+    for (i in 1:numAlt) 
       altIDs <- c(altIDs,paste(prefix,i, sep=""))
+    
     rownames(performanceTable) <- altIDs
     
-    # print(dist$Message.error)
   }
   else
   {
     
-    infoCalc <- paste(dist$Message.error, "Wrong correlation in:", paste("(",paste(dist$Correlation.error, sep="",collapse=","),").",sep=""), sep=" ")
+    infoCalc <- paste(dist$Message.error, "Wrong correlation.",sep=" ")
     
     execFlag <- FALSE
     
     if(is.nan(dist$Borne.correlation[1])||is.nan(dist$Borne.correlation[2]))
     {
-      infoCalc <- paste(infoCalc, "Impossible to calculate bounds for the correlation.", sep=" ")
+      
+      nodes<-nodes(network)
+      indice.interstice<-which(critIDs==dist$Correlation.error[2])
+      parents.node.error<-parents(network,nodes[indice.interstice])
+      size.parent<-length(parents.node.error)
+      
+      ################Convert les parents en critIDs#############################
+      for(p in 1:size.parent)
+      {
+        indice<-which(nodes==parents.node.error[p])
+        parents.node.error[p]<-critIDs[indice]
+      }
+      ##################Creation du tableaux nous donnant les bornes des corrélations pour guider l utilisateur############################
+      
+      Table.solution<-matrix(NA,nrow=size.parent,ncol=4)
+      
+      for(tabrow in 1:size.parent)
+      {
+        Table.solution[tabrow,1]<-parents.node.error[tabrow]
+        Table.solution[tabrow,2]<-dist$Correlation.error[2]
+        Table.solution[tabrow,3]<-min((-dist$Coef.ajustement*dist$tX)[tabrow],(dist$Coef.ajustement*dist$tX)[tabrow])
+        Table.solution[tabrow,4]<-max((-dist$Coef.ajustement*dist$tX)[tabrow],(dist$Coef.ajustement*dist$tX)[tabrow])
+      }
+      
+      
+      infoCalc <- paste(infoCalc, "Valid correlation intervals:", sep=" ")
+      
+      for (i in 1:dim(Table.solution)[1]){
+        infoCalc <- paste(infoCalc, paste("(",Table.solution[i,1],",",Table.solution[i,2],") in [",Table.solution[i,3],",",Table.solution[i,4],"],",sep=""), sep=" ")
+      }
       
     }
     
     else
     {
-      infoCalc <- paste(infoCalc, "Correlation should be in:", paste("[",paste(dist$Borne.correlation,sep="",collapse=","),"]."), sep=" ")
+      infoCalc <- paste(infoCalc, "Correlation for",paste("(",paste(dist$Correlation.error, sep="",collapse=","),")",sep=""),"should be in:", paste("[",min(dist$Borne.correlation),",",max(dist$Borne.correlation),"]."), sep=" ")
     }
   }
   
