@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# no error for this execution
+
+R --slave --vanilla --file="../stats.R" --args "${PWD}/in1" "${PWD}/out1" "criteria.xml" "alternatives.xml" "performanceTable.xml" "messages.xml" "means.xml" "standardDeviations.xml" "variances.xml" "mins.xml" "maxes.xml" "correlation.xml" "mediansFile.xml"
+

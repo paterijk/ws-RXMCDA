@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# error message because criteria file is not compatible with performance table file
+
+R --slave --vanilla --file="../stats.R" --args "${PWD}/in3" "${PWD}/out3" "criteria.xml" "alternatives.xml" "performanceTable.xml" "messages.xml" "means.xml" "standardDeviations.xml" "variances.xml" "mins.xml" "maxes.xml" "correlation.xml" "mediansFile.xml"

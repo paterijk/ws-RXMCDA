@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# no error, only filtering according to criteria file
+
+R --slave --vanilla --file="../stats.R" --args "${PWD}/in2" "${PWD}/out2" "criteria.xml" "alternatives.xml" "performanceTable.xml" "messages.xml" "means.xml" "standardDeviations.xml" "variances.xml" "mins.xml" "maxes.xml" "correlation.xml" "mediansFile.xml"
